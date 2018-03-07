@@ -1,0 +1,172 @@
+\documentclass{doku2018}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+%\usepackage{TheSansOsF}
+
+\academy{Akademie Grovesmühle}{2017}{3}
+
+\begin{document}
+\tableofcontents
+
+ \course[EC, MF und FLT]{Elliptische Kurven, Modulformen und Fermats letzter
+   Satz}{1}{\includegraphics[width=.9\textwidth]{Titelbild-fehlt.png}}
+
+Wir verwenden französische "`Anführungszeichen"', aber mit deutschen Abständen!
+UTF-8-Anführungszeichen wie diese: » und « funktionieren auch und sind für
+manche vielleicht angenehmer einzugeben. Sogar »>>« und »<<« funktionieren!
+
+\section{Aus der Kursbeschreibung}
+\authors{Eins, Zwei und Drei}
+
+\Blindtext
+
+\subsection{Foo}
+\blindtext
+
+Bei Gelegenheit schreiben wir hier etwas.
+
+\section{Einige \LaTeX-Beispiele}
+
+\subsection{Strukturierung}
+
+\subsubsection{Es gibt Unterüberschriften}
+
+\paragraph{und Miniaturüberschriften.} Die sind aber selten. Unter subsection
+lohnt es sich oft nicht und wirkt leicht formalistisch. Die Nummerierung ist
+offenbar automatisch (wohoo!)
+
+Einen Absatz im Text erzeugt man durch eine Leerzeile im Quelltext. Leerzeilen
+in der Ausgabe gibt es nicht — außer, man möchte einen neuen Abschnitt beginnen.
+Manche Menschen verwenden \verb|\\|. Das gehört aber verboten: Aufmerksame
+Kursleiter*innen sehen diese Art von Abstand auf den ersten Blick und geben dir
+deine Doku zurück, bevor sie sie sich genauer angeschaut haben. \verb|\\| ist
+böse!
+
+Typographisch kann man noch viel mehr beachten, etwa den Unterschied zwischen
+»-« und »--«. Das erste ist ein Binde-Strich -- während das zweite ein
+Gedankenstrich ist. Über das Minus (im Sinne von $3-2=1$) reden wir später noch
+— es sieht aber auch anders aus. Man kann auch UTF8-Gedankenstriche eingeben,
+wenn du das mit deinem Betriebssystem ausmachst.
+
+\subsection{Wichtige Umgebungen}
+
+\begin{itemize}
+\item Zuerst sind unnummerierte Aufzählungen zu erwähnen
+\item Jeden \verb|\item| ist ein neues Item.
+\item Also:
+  \begin{enumerate}
+  \item Zuerst die Umgebung mit \verb|\begin{itemize}| öffnen
+    \item dann \verb|\item|-en so lange man lustig ist
+    \item zuletzt die Umgebung schließen (\verb|\end{itemize}|)
+  \end{enumerate}
+\item Nummerierte Aufzählungen gehen ganz ähnlich.
+\item Schachteln
+  \begin{itemize}
+  \item kann
+    \begin{itemize}
+    \item man
+      \begin{itemize}
+      \item auch
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Mathe}
+
+Formeln zu \TeX en ist etwas gewöhnungsbedürftig. $ab=c$ setzt Formeln
+"`inline"'. \[ab=c\] setzt sie dagegen ab.
+
+\begin{equation}
+  ab=c
+\end{equation} nummeriert sie darüber hinaus. Die Dokumentation des amsmath-Pakets ist da
+wertvoll.
+
+Griechische Buchstaben werden quasi ausgeschrieben, also $\alpha, \beta, \delta,
+\epsilon, \varepsilon, \dots, \rho, \dots,\omega$ and natürlich auch $\Omega$
+und andere. Zeichen wie $\prod$ und $\sum$ und $\int$ sind auch recht
+naheliegend benannt.
+
+Faustregel dann ist: Wenn etwas hoch soll, benutze \verb|^|, wenn etwas runter
+soll, benutze \verb|_|. Das gilt für Exponenten und Indizes
+($a_1^2+a_2^2=a_3^2$), aber auch für andere Zeichen: \[ \int_{-\infty}^{\infty}
+  \exp(-x^2)\mathrm{d}x = \sqrt{\pi}.\]
+
+Wenn wir schon dabei sind: $dx$ ist "`$d$ mal $x$"', $\mathrm{d}x$ dagegen das
+Maß, nach dem integriert wird.
+
+Zuletzt vielleicht noch Bilder und Referenzen: In Abbildung
+\ref{fig:starwarsreferenz} auf Seite \pageref{fig:starwarsreferenz} gibt es
+nichts zu sehen. Mit \verb|\ref| kann man sich übrigens auf alles beziehen, was
+ein \verb|\label| bekommen hat. Dann passen Nummerierung und so.\footnote{Das
+  hier ist übrigens eine Fußnote. Schön, nicht?}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.9\columnwidth]{Titelbild-fehlt.png}
+\caption{These aren't the droids you're looking for.}
+\label{fig:starwarsreferenz}
+\end{center}
+\end{figure}
+
+\blindtext
+
+\begin{figure*}
+\begin{center}
+\includegraphics[width=.9\textwidth]{Titelbild-fehlt.png}
+\caption{Immer noch kein Bild.}
+\label{fig:captionssolltenaussagekraeftigsein}
+\end{center}
+\end{figure*}
+
+\Blindtext
+
+Hier ist eine aus dem Internet geklaute Tabelle:
+
+
+\begin{table}
+  \begin{center}
+    \caption{Eine Tabelle}
+  \begin{tabular}{lrr}
+    
+\toprule
+Studium\\  
+\midrule 
+Fach & Dauer & Einkommen (\euro{})\\ 
+\midrule 
+Info & 2 & 12,75 \\
+MST & 6 & 8,20 \\
+VWL & 14 & 10,00\\ 
+\bottomrule
+  \end{tabular}
+  \end{center}
+  \end{table}
+
+
+\blindtext
+\subsubsection{Bar}
+
+\blindtext
+
+\course{Modellierung}{2}{}
+
+\blindtext
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.9\columnwidth]{Titelbild-fehlt.png}
+\label{fig:einnichtssagendeslabelnuetztniemandem}
+\end{center}
+\end{figure}
+
+
+\blindtext
+\section{Nächste Section}
+\author{...}
+
+
+\Blindtext
+
+\Blindtext
+\end{document}
