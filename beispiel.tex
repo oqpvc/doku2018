@@ -2,14 +2,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{blindtext}
+\usepackage{hologo} % für LaTeX-Logos
 %\usepackage{TheSansOsF}
 
 \academy{Akademie Grovesmühle}{2017}{3}
 
 \begin{document}
-\tableofcontents
+%\tableofcontents
 
- \course[EC, MF und FLT]{Elliptische Kurven, Modulformen und Fermats letzter
+ \course[EC, MF \& FLT]{Elliptische Kurven, Modulformen und Fermats letzter
    Satz}{1}{\includegraphics[width=.9\textwidth]{Titelbild-fehlt.png}}
 
 Wir verwenden französische "`Anführungszeichen"', aber mit deutschen Abständen!
@@ -19,14 +20,9 @@ manche vielleicht angenehmer einzugeben. Sogar »>>« und »<<« funktionieren!
 \section{Aus der Kursbeschreibung}
 \authors{Eins, Zwei und Drei}
 
-\Blindtext
+Bei Gelegenheit könnte hier Inhalt stehen.
 
-\subsection{Foo}
-\blindtext
-
-Bei Gelegenheit schreiben wir hier etwas.
-
-\section{Einige \LaTeX-Beispiele}
+\section{Einige \hologo{LaTeX}-Beispiele}
 
 \subsection{Strukturierung}
 
@@ -75,7 +71,7 @@ wenn du das mit deinem Betriebssystem ausmachst.
 
 \subsection{Mathe}
 
-Formeln zu \TeX en ist etwas gewöhnungsbedürftig. $ab=c$ setzt Formeln
+Formeln zu \hologo{TeX} en ist etwas gewöhnungsbedürftig. $ab=c$ setzt Formeln
 "`inline"'. \[ab=c\] setzt sie dagegen ab.
 
 \begin{equation}
@@ -115,12 +111,13 @@ ein \verb|\label| bekommen hat. Dann passen Nummerierung und so.\footnote{Das
 \begin{figure*}
 \begin{center}
 \includegraphics[width=.9\textwidth]{Titelbild-fehlt.png}
-\caption{Immer noch kein Bild.}
+\caption{Immer noch kein Bild. Dieses ist breit, daher wird es ggf.\ irgendwo
+  anders platziert.}
 \label{fig:captionssolltenaussagekraeftigsein}
 \end{center}
 \end{figure*}
 
-\Blindtext
+\blindtext
 
 Hier ist eine aus dem Internet geklaute Tabelle:
 
@@ -144,29 +141,16 @@ VWL & 14 & 10,00\\
   \end{table}
 
 
-\blindtext
-\subsubsection{Bar}
+\section{Technisches}
 
-\blindtext
+Die Datei muss mit \hologo{pdfLaTeX} kompiliert werden, weil das Paket, was
+später die Hausschrift importiert, \emph{ausschließlich} mit \hologo{pdfLaTeX}
+funktioniert, während es bei \hologo{XeLaTeX} hart nörgelt.
 
-\course{Modellierung}{2}{}
+Die Dokumentenklasse forciert UTF-8-Encoding (obiges inputenc ist nur dazu gut,
+dass Editoren das auch checken). Das ist eine gute Idee (TM) — die
+System-Defaults sind einerseits inkompatibel, andererseits auch grottig, wenn
+spannendere Dinge als Text mit ein paar Umlauten ge\hologo{TeX}t wird.
+  
 
-\blindtext
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.9\columnwidth]{Titelbild-fehlt.png}
-\label{fig:einnichtssagendeslabelnuetztniemandem}
-\end{center}
-\end{figure}
-
-
-\blindtext
-\section{Nächste Section}
-\author{...}
-
-
-\Blindtext
-
-\Blindtext
 \end{document}

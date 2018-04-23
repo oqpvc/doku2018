@@ -1,5 +1,6 @@
 %%
-%% LaTeX2e-Dokumentenklasse für neues BuB-Doku-Layout möglichst schlank
+%% LaTeX2e-Dokumentenklasse für BuB-Doku-Layout
+%% möglichst schlank gehalten, wenige Abhängigkeiten
 %% Stand 4.12.2017
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
@@ -77,9 +78,10 @@
 }
 
 \newcommand{\authors}[1]{%
-  {\parindent0pt%
-  \linespread{1.1}\large\scshape#1%
-  \par\nobreak\vspace*{35pt}}
+  {
+    \leavevmode\phantom{\fontsize{12pt}{0pt}\selectfont\textbf{\thesection{}}}\hspace{10pt}
+    \fontsize{9.8pt}{0pt}\selectfont\itshape#1%
+  \par\nobreak\vspace*{10pt}}
   \@afterheading%
 }
 
@@ -89,10 +91,13 @@
 
 % rand bindung und außen
 \setlrmarginsandblock{30mm}{20mm}{*}
+
 % rand oben unten
 \setulmarginsandblock{24mm}{25mm}{*}
+
 % abstand zwischen den textspalten
 \setcolsepandrule{5mm}{0pt}
+
 \checkandfixthelayout
 
 % einrückung der absätze
